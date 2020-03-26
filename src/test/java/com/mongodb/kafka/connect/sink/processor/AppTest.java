@@ -1,4 +1,4 @@
-package de.claas.demo.kafka;
+package com.mongodb.kafka.connect.sink.processor;
 
 import static org.junit.Assert.assertTrue;
 
