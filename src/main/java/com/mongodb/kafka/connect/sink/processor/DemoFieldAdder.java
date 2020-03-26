@@ -18,21 +18,26 @@
 
 package com.mongodb.kafka.connect.sink.processor;
 
+import static com.mongodb.kafka.connect.sink.MongoSinkTopicConfig.ID_FIELD;
+
 import org.apache.kafka.connect.sink.SinkRecord;
+import org.bson.BsonString;
 
 import com.mongodb.kafka.connect.sink.MongoSinkTopicConfig;
 import com.mongodb.kafka.connect.sink.converter.SinkDocument;
+import com.mongodb.kafka.connect.sink.processor.id.strategy.IdStrategy;
 
-public abstract class PostProcessor {
-    private final MongoSinkTopicConfig config;
+public class DemoFieldAdder extends PostProcessor {
+    private final IdStrategy idStrategy;
 
-    public PostProcessor(final MongoSinkTopicConfig config) {
-        this.config = config;
+    public DemoFieldAdder(final MongoSinkTopicConfig config) {
+        super(config);
+        this.idStrategy = config.getIdStrategy();
     }
 
-    public abstract void process(SinkDocument doc, SinkRecord orig);
-
-    public MongoSinkTopicConfig getConfig() {
-        return config;
+    @Override
+    public void process(final SinkDocument doc, final SinkRecord orig) {
+        doc.getValueDoc().ifPresent(vd -> vd.append("postProcessor", new BsonString("With Love ;-)")));
     }
+
 }
