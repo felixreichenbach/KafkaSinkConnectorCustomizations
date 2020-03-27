@@ -1,4 +1,4 @@
-# Custom Kafka Write Strategy
+# How to build a custom WriteStrategy
 A simple MongoDB Kafka connector custom write strategy to get you started.
 
 
@@ -6,11 +6,11 @@ A simple MongoDB Kafka connector custom write strategy to get you started.
 Get the Kafka connector demo environment up and running:
 http://docs.mongodb.com/kafka-connector/master/kafka-docker-example/
 
-## Build Custom Write Strategy JAR File
+## Build Custom WriteStrategy JAR File
 Clone Repo:
-https://github.com/felixreichenbach/kafkaWriteStrategy
+https://github.com/felixreichenbach/KafkaSinkConnectorCustomizations
 
-Cd into the directory and run:
+Cd into the "./WriteStrategy" directory and run:
 
 ```mvn clean install```
 
