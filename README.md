@@ -20,6 +20,21 @@ When you run the Kafka demo environment it will automatically build the Kafka Co
 
 ```./run.sh```
 
-## Configure The Sink Connector
+## Configure The Sink Connector (WIP)
 
-TBD
+```
+curl -X POST http://localhost:8083/connectors -H "Content-Type: application/json" --data '
+  {"name": "mongo-test-sink",
+   "config": {
+     "connector.class":"com.mongodb.kafka.connect.MongoSinkConnector",
+     "tasks.max":"1",
+     "topics":"test",
+     "connection.uri":"mongodb://mongo1:27017,mongo2:27017,mongo3:27017",
+     "database":"custom",
+     "collection":"test",
+     "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+     "value.converter": "org.apache.kafka.connect.storage.StringConverter",
+     "value.converter.schemas.enable": "false",
+     "writemodel.strategy": "de.demo.kafka.CustomWriteModelStrategy"
+}}'
+```
