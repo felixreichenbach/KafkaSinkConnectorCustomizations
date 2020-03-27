@@ -9,15 +9,19 @@ There are two parts in this repo, "How to build a PostProcessor" and "How to bui
 
 ## Prerequisit: Demo Environment
 To be able to easily deploy and test your customizations. We recommend to follow this guide:
+
 http://docs.mongodb.com/kafka-connector/master/kafka-docker-example/
 
 
 ## PostProcessor
 A post processor allows you to transform / change messages, before they are handed over to one of the write strategies.
 You can find detailed instructions here:
+
 https://github.com/felixreichenbach/KafkaSinkConnectorCustomizations/tree/master/PostProcessor
 
 ## WriteStrategy
 A write strategy defines the write command executed against the mongodb environment.
+
 You can find detailed information here:
+
 https://github.com/felixreichenbach/KafkaSinkConnectorCustomizations/tree/master/WriteStrategy
