@@ -35,6 +35,6 @@ curl -X POST http://localhost:8083/connectors -H "Content-Type: application/json
      "key.converter": "org.apache.kafka.connect.storage.StringConverter",
      "value.converter": "org.apache.kafka.connect.storage.StringConverter",
      "value.converter.schemas.enable": "false",
-     "writemodel.strategy": "de.demo.kafka.CustomWriteModelStrategy"
+     "post.processor.chain" : "com.mongodb.kafka.connect.sink.processor.DemoFieldAdder"
 }}'
 ```
