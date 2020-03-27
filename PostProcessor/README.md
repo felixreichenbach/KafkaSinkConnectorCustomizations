@@ -1,4 +1,4 @@
-# KafkaSinkConnectorCustomizations
+# How to build a custom PostProcessor
 A simple MongoDB Kafka post processor to get you started.
 
 
