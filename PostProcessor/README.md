@@ -20,7 +20,7 @@ When you run the Kafka demo environment it will automatically build the Kafka Co
 
 ```./run.sh```
 
-## Configure The Sink Connector (WIP)
+## Configure The Sink Connector
 
 ```
 curl -X POST http://localhost:8083/connectors -H "Content-Type: application/json" --data '
