@@ -1,4 +1,4 @@
-package de.claas.demo.kafka;
+package de.demo.kafka;
 
 import static org.junit.Assert.assertTrue;
 
