@@ -11,6 +11,10 @@ http://docs.mongodb.com/kafka-connector/master/kafka-docker-example/
 Clone Repo:
 https://github.com/felixreichenbach/KafkaSinkConnectorCustomizations
 
+Modify the custom post processor java file "DemoFieldAdder.java" in 
+
+```./PostProcessor/src/main/java/com/mongodb/kafka/connect/sink/processor```
+
 Copy the custom post processor java file to the Kafka demo environment build path:
 
 ```./src/main/java/com/mongodb/kafka/connect/sink/processor```
