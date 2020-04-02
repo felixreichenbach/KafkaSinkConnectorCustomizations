@@ -38,3 +38,30 @@ curl -X POST http://localhost:8083/connectors -H "Content-Type: application/json
      "post.processor.chain" : "com.mongodb.kafka.connect.sink.processor.DemoFieldAdder"
 }}'
 ```
+## Test Custom Write Strategy
+We are going to use the command line producer to create messages.
+The “broker” container can be used to run Kafka cli commands.
+
+SSH into the broker:
+
+```docker exec -it broker /bin/bash```
+
+Start the command line producer:
+
+```kafka-console-producer --broker-list localhost:9092 --topic test --property value.serializer=custom.class.serialization.JsonSerializer```
+
+Send a message to the topic:
+You have to provide a properly formatted JSON string or it will crash! -> Definitely something we can improve!
+
+```{"message":"Hello World"}```
+
+Query MongoDB:
+You have to run the command in the folder where you start the demo environment with ./run.sh!
+
+```docker-compose exec mongo1 /usr/bin/mongo```
+
+```
+use custom
+
+db.test.find()
+```
